@@ -1,31 +1,271 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{ 
+    ViewBag.Title = "Hoge Page";
 }
+ <!--Star slider-->
+<section class="slider">
+    <div class="fullwidthbanner-container">
+        <div class="fullwidthbanner">
+            <ul>
+                <!-- THE FIRST SLIDE -->
+                <li data-transition="flyin" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb1.jpg" data-delay="4000">
+                    <img src="images/slides/slide-intro.jpg" alt="">
+                    <div class="caption randomrotate"
+                         data-x="center"
+                         data-y="120"
+                         data-speed="300"
+                         data-start="1200"
+                         data-easing="easeOutExpo"><img src="images/slides/logo.png" alt=""></div>
+                </li>
+                <!-- THE SECOND SLIDE -->
+                <li data-transition="3dcurtain-horizontal" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb2.jpg">
+                    <img src="images/slides/slide-1.jpg" alt="">
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+                    <div class="caption randomrotate"
+                         data-x="center"
+                         data-y="90"
+                         data-speed="300"
+                         data-start="1000"
+                         data-easing="easeOutExpo"><img src="images/slides/diagram.png" alt="Image 9"></div>
+                    <div class="caption randomrotate"
+                         data-x="150"
+                         data-y="80"
+                         data-speed="300"
+                         data-start="2000"
+                         data-easing="easeOutExpo"><img src="images/slides/icon-slide-1.png" alt=""></div>
+                    <div class="caption randomrotate"
+                         data-x="180"
+                         data-y="300"
+                         data-speed="300"
+                         data-start="2500"
+                         data-easing="easeOutExpo"><img src="images/slides/icon-slide-2.png" alt=""></div>
+                    <div class="caption randomrotate"
+                         data-x="620"
+                         data-y="80"
+                         data-speed="300"
+                         data-start="3000"
+                         data-easing="easeOutExpo"><img src="images/slides/icon-slide-3.png" alt=""></div>
+                    <div class="caption randomrotate"
+                         data-x="605"
+                         data-y="300"
+                         data-speed="300"
+                         data-start="3500"
+                         data-easing="easeOutExpo"><img src="images/slides/icon-slide-4.png" alt=""></div>
+                </li>
+                <!-- THE THIRD SLIDE -->
+                <li data-transition="3dcurtain-horizontal" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb2.jpg">
+                    <img src="images/slides/slide-2.jpg" alt="">
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+                    <div class="caption very_big_white lfl stl"
+                         data-x="right"
+                         data-y="180"
+                         data-speed="300"
+                         data-start="500"
+                         data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine">JOIN THE COMMUNITY</div>
+
+                    <div class="caption lfb stl"
+                         data-x="right"
+                         data-y="250"
+                         data-speed="300"
+                         data-start="500"
+                         data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine"><a href="about.html" class="button_large">Read more</a></div>
+                </li>
+                <!-- THE FOURTH SLIDE -->
+                <li data-transition="cube" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb2.jpg">
+                    <img src="images/slides/slide-3.jpg" alt="">
+
+                    <div class="caption very_big_white lfl stl"
+                         data-x="right"
+                         data-y="180"
+                         data-speed="300"
+                         data-start="500"
+                         data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine">DIFFERENT COURSES AVAILABLE</div>
+
+                    <div class="caption lfr stl"
+                         data-x="right"
+                         data-y="250"
+                         data-speed="300"
+                         data-start="500"
+                         data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine"><a href="all-courses.html" class="button_large">Read more</a></div>
+                </li>
+                <!-- THE FIFTH SLIDE -->
+                <li data-transition="slideleft" data-slotamount="1" data-masterspeed="300" data-thumb="images/thumbs/thumb2.jpg">
+                    <img src="images/slides/slide-5.jpg" alt="">
+                    <div class="caption very_big_white lfl stl"
+                         data-x="30"
+                         data-y="180"
+                         data-speed="300"
+                         data-start="500"
+                         data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine">IMPROVE YOUR SKILLS</div>
+                    <div class="caption big_white lfl stl"
+                         data-x="30"
+                         data-y="250"
+                         data-speed="300"
+                         data-start="800"
+                         data-easing="easeOutExpo" data-end="9100" data-endspeed="300" data-endeasing="easeInSine">with expert teachers</div>
+                </li>
+
+            </ul>
+            <div class="tp-bannertimer tp-bottom"></div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+</section><!--End slider-->
+
+<div class="container">
+    <div class="row" id="main-boxes">
+        <div class="col-md-4 col-sm-4">
+            <div class="box-style-2 green">
+                <a href="all-courses.html" title="All Courses">
+                    <img src="img/icon-home-course.png" alt="">
+                    <h3>Courses</h3>
+                    <p>Lorem ipsum dolor sit amet, dicta aliquip ad vix, ne sit everti corpora. Qui cu eros feugiat, elitr iudico ad pri.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4">
+            <div class="box-style-2 orange">
+                <a href="contact.html" title="Apply">
+                    <img src="img/icon-home-apply.png" alt="">
+                    <h3>Apply now</h3>
+                    <p>Lorem ipsum dolor sit amet, dicta aliquip ad vix, ne sit everti corpora. Qui cu eros feugiat, elitr iudico ad pri.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4">
+            <div class="box-style-2 red">
+                <a href="contact.html" title="Plan a visit">
+                    <img src="img/icon-home-visit.png" alt="">
+                    <h3>Plan a visit</h3>
+                    <p>Lorem ipsum dolor sit amet, dicta aliquip ad vix, ne sit everti corpora. Qui cu eros feugiat, elitr iudico ad pri.</p>
+                </a>
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+</div> <!-- end container-->
+
+
+<div class="container">
+    <div class="row">
+        <aside class="col-md-4 col-sm-4">
+
+            <div class="box-style-1 ribbon borders">
+
+                <div class="feat">
+                    <i class="icon-group icon-3x"></i>
+                    <h3>Expert teachers</h3>
+                    <p>An utinam reprimique duo, putant mandamus cu qui. Autem possim his cu, quodsi nominavi fabellas ut sit, mea ea ullum epicurei. </p>
+                </div>
+
+                <hr class="double">
+
+                <div class="feat">
+                    <i class="icon-film icon-3x"></i>
+                    <h3>Video Courses</h3>
+                    <p>An utinam reprimique duo, putant mandamus cu qui. Autem possim his cu, quodsi nominavi fabellas ut sit, mea ea ullum epicurei. </p>
+                </div>
+
+                <hr class="double">
+
+                <div class="feat">
+                    <i class="icon-book icon-3x"></i>
+                    <h3>Library</h3>
+                    <p>An utinam reprimique duo, putant mandamus cu qui. Autem possim his cu, quodsi nominavi fabellas ut sit, mea ea ullum epicurei. </p>
+                </div>
+
+                <hr class="double">
+
+                <div class="feat last">
+                    <i class="icon-laptop icon-3x"></i>
+                    <h3>Online courses</h3>
+                    <p>An utinam reprimique duo, putant mandamus cu qui. Autem possim his cu, quodsi nominavi fabellas ut sit, mea ea ullum epicurei. </p>
+                </div>
+
+            </div>
+            <p><a href="all-courses.html" title="All courses"><img src="img/banner.jpg" alt="Banner" class="img-rounded img-responsive"></a></p>
+        </aside>
+        <section class="col-md-8 col-sm-8">
+            <div class="col-right">
+                <h2>Upcoming courses</h2>
+                <p>An utinam reprimique duo, putant mandamus cu qui. Autem possim his cu, quodsi nominavi fabellas ut sit, mea ea ullum epicurei. Saepe tantas ocurreret duo ea, has facilisi vulputate an. Priaeque iuvaret nominati et, ad mea clita numquam. Maluisset dissentiunt et per, dico liber erroribus vis te. Dolor consul graecis nec ut, scripta eruditi scriptorem et nam.</p>
+                <hr>
+                <div class="strip-lessons">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-6">
+                            <div class="box-style-one borders"><img src="img/lessons.png" alt=""><h5>Intro</h5></div>
+                        </div>
+                        <div class="clearfix visible-xs-block"></div>
+                        <div class="col-md-9">
+                            <h4>Autem possim his</h4>
+                            <p>An utinam reprimique duo, putant mandamus cu qui. Autem possim his cu, quodsi nominavi fabellas ut sit, <strong>mea ea ullum epicurei</strong>. Saepe tantas ocurreret duo ea, has facilisi vulputate an. Pri aeque iuvaret nominati et, ad mea clita numquam. </p>
+                            <ul class="data-lessons">
+                                <li><i class="icon-time"></i>Duration: 3 hours</li>
+                                <li><i class="icon-film"></i><a class="fancybox-media" href="http://www.youtube.com/watch?v=pgk-719mTxM">Play video</a></li>
+                                <li><i class="icon-cloud-download"></i><a href="#">Donwload prospect</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- End Strip course -->
+
+
+                <div class="strip-lessons">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-6">
+                            <div class="box-style-one borders"><img src="img/teacher.jpg" alt="" class="picture img-responsive"><h5>Lesson one</h5></div>
+                        </div>
+                        <div class="clearfix visible-xs-block"></div>
+                        <div class="col-md-9">
+                            <h4>Putant mandamus</h4>
+                            <p>An utinam reprimique duo, putant mandamus cu qui. Autem possim his cu, quodsi nominavi fabellas ut sit, <strong>mea ea ullum epicurei</strong>. Saepe tantas ocurreret duo ea, has facilisi vulputate an. Pri aeque iuvaret nominati et, ad mea clita numquam. </p>
+                            <ul class="data-lessons">
+                                <li><i class="icon-time"></i>Duration: 3 hours</li>
+                                <li><i class="icon-film"></i><a class="fancybox-media" href="http://www.youtube.com/watch?v=pgk-719mTxM">Play video</a></li>
+                                <li><i class="icon-cloud-download"></i><a href="#">Donwload prospect</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- End Strip course -->
+
+                <div class="strip-lessons">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-6">
+                            <div class="box-style-one borders"><img src="img/teacher-2.jpg" alt="" class="picture img-responsive"><h5>Lesson two</h5></div>
+                        </div>
+                        <div class="clearfix visible-xs-block"></div>
+                        <div class="col-md-9">
+                            <h4>Quodsi nominavi</h4>
+                            <p>An utinam reprimique duo, putant mandamus cu qui. Autem possim his cu, quodsi nominavi fabellas ut sit, <strong>mea ea ullum epicurei</strong>. Saepe tantas ocurreret duo ea, has facilisi vulputate an. Pri aeque iuvaret nominati et, ad mea clita numquam. </p>
+                            <ul class="data-lessons">
+                                <li><i class="icon-time"></i>Duration: 3 hours</li>
+                                <li><i class="icon-film"></i><a class="fancybox-media" href="http://www.youtube.com/watch?v=pgk-719mTxM">Play video</a></li>
+                                <li><i class="icon-cloud-download"></i><a href="#">Donwload prospect</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- End Strip course -->
+
+                <div class="strip-lessons">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-6">
+                            <div class="box-style-one borders"><img src="img/teacher-3.jpg" alt="" class="picture img-responsive"><h5>Lesson three</h5></div>
+                        </div>
+                        <div class="clearfix visible-xs-block"></div>
+                        <div class="col-md-9">
+                            <h4>Saepe tantas</h4>
+                            <p>An utinam reprimique duo, putant mandamus cu qui. Autem possim his cu, quodsi nominavi fabellas ut sit, <strong>mea ea ullum epicurei</strong>. Saepe tantas ocurreret duo ea, has facilisi vulputate an. Pri aeque iuvaret nominati et, ad mea clita numquam. </p>
+                            <ul class="data-lessons">
+                                <li><i class="icon-time"></i>Duration: 3 hours</li>
+                                <li><i class="icon-film"></i><a class="fancybox-media" href="http://www.youtube.com/watch?v=pgk-719mTxM">Play video</a></li>
+                                <li><i class="icon-cloud-download"></i><a href="#">Donwload prospect</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- End Strip course -->
+
+                <p class="text-center"><a href="contact.html" class="button_large">View all courses </a></p>
+
+            </div>
+        </section>
     </div>
-</div>
+</div><!-- end container-->
