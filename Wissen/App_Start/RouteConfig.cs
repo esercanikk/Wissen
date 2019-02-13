@@ -12,7 +12,10 @@ namespace Wissen
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.MapRoute(name: "About", url: "Hakkimizda",
+                defaults: new { controller = "Home", action = "About" });
+            routes.MapRoute(name: "Contact", url: "İletişim",
+                defaults: new { controller = "Home", action = "Contact" });
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
