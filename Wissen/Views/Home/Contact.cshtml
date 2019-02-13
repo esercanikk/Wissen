@@ -51,31 +51,40 @@
                 <h4>General Enquire or Apply</h4>
 
                 <div id="message-contact"></div>
-                <form method="post" action="assets/contact.php" id="contactform">
+                <form method="post" action="@Url.Action("Contact")" id="contactform">
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="alert alert-success">@ViewBag.Message</div>
+                            </div>
+                        </div>
+
+                    }
                     <div class="row">
                         <div class="col-md-6">
                             <label>Name <span class="required">* </span></label>
-                            <input type="text" class="form-control ie7-margin" id="name_contact">
+                            <input type="text" class="form-control ie7-margin" id="name_contact" name="name">
                         </div>
                         <div class="col-md-6">
                             <label>Last name <span class="required">* </span></label>
-                            <input type="text" class="form-control ie7-margin" id="lastname_contact">
+                            <input type="text" class="form-control ie7-margin" id="lastname_contact" name="lastName">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <label>Email <span class="required">* </span></label>
-                            <input type="email" id="email_contact" class="form-control ie7-margin">
+                            <input type="email" id="email_contact" class="form-control ie7-margin" name="email">
                         </div>
                         <div class="col-md-6">
                             <label>Phone <span class="required">* </span></label>
-                            <input type="text" id="phone_contact" class="form-control ie7-margin">
+                            <input type="text" id="phone_contact" class="form-control ie7-margin" name="phone">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <label>Select a department</label>
-                            <select id="subject_contact" class="form-control">
+                            <select id="subject_contact" class="form-control" name="subject">
                                 <option value="Administration">Administration</option>
                                 <option value="Admissions">Admissions</option>
                                 <option value="Courses">Courses</option>
@@ -86,16 +95,13 @@
                     <div class="row">
                         <div class="col-md-12">
                             <label>Message <span class="required">*</span></label>
-                            <textarea rows="5" id="message_contact" class="form-control"></textarea>
+                            <textarea rows="5" id="message_contact" class="form-control" name="message"></textarea>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-3">
-                            <label><span class="required">*</span> Are you human? 3 + 1 =</label>
-                            <input type="text" id="verify_contact" class="form-control">
-                        </div>
-                        <div class="button-align col-md-9">
-                            <input type="submit" id="submit-contact" value="Submit" class=" button_medium">
+
+                        <div class="button-align col-md-12">
+                            <input type="submit" value="Submit" class=" button_medium">
                         </div>
                     </div>
                     <hr>
