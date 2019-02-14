@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 
@@ -14,6 +15,21 @@ namespace Wissen.Controllers
         {
             return View();
         }
+        public ActionResult DenemeForm()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult DenemeForm(Wissen.Models.DenemeForm model)
+        {
+            if (ModelState.IsValid)
+            {
+                //TODU: Mail Gönderme
+                ViewBag.Message = "Mail Bşarıyla Gönderildi.";
+                return View();
+            }
+            return View();
+        }
 
         public ActionResult About()
         {
@@ -24,14 +40,61 @@ namespace Wissen.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your application description page.";
 
             return View();
         }
         [HttpPost]
         public ActionResult Contact( String name,string lastName,string email,string phone, string subject,
            string message)
-        { 
+        {
+            name = name.Trim();
+            lastName = lastName.Trim();
+            email = email.Trim();
+            phone = phone.Trim();
+
+            if (name == "")
+            {
+                ViewBag.Message = "Ad alanı gereklidir.";
+                ViewBag.IsError = true;
+                return View();
+            }
+            if (name.Length > 6)
+            {
+                ViewBag.Message = "Ad alanı 6 karakterden uzun olamaz.. !";
+                ViewBag.IsError = true;
+                return View();
+            }
+            if (lastName == "")
+            {
+                ViewBag.Message = "SoyAd alanı gereklidir.";
+                ViewBag.IsError = true;
+                return View();
+            }
+            if (email == "")
+            {
+                ViewBag.Message = "Email alanı gereklidir.";
+                ViewBag.IsError = true;
+                return View();
+            }
+            Regex regex = new Regex(@"^5(0[5-7]|[3-5]\d) ?\d{3} ?\d{4}$");
+            Match match = regex.Match(phone);
+            if (match.Success == false)
+            {
+                ViewBag.Message = "Telefonu 5XX XXX XXXX biçiminde giriniz...";
+                ViewBag.IsError = true;
+                return View(); 
+
+            }
+            if (phone == "")
+            {
+                ViewBag.Message = "Phone alanı gereklidir.";
+                ViewBag.IsError = true;
+                return View();
+            }
+           
+
+
             //TODU: Mail gönde4rme işlemi yapılacak
             System.Net.Mail.MailMessage mailMessage = new System.Net.Mail.MailMessage();
 
