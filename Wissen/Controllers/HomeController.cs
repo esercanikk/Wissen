@@ -24,8 +24,48 @@ namespace Wissen.Controllers
         {
             if (ModelState.IsValid)
             {
-                //TODU: Mail Gönderme
-                ViewBag.Message = "Mail Bşarıyla Gönderildi.";
+                bool hasError = false;
+                try
+                {//TODU: Mail gönde4rme işlemi yapılacak
+                    System.Net.Mail.MailMessage mailMessage = new System.Net.Mail.MailMessage();
+
+                    mailMessage.From = new System.Net.Mail.MailAddress("gonderen@gmail.com", "Gönderen Firma Adı");
+                    mailMessage.Subject = "İletişim Formu: " + model.FirstName;
+
+                    mailMessage.To.Add("alici@firmaadi.com,digeralici@gmail.com");
+
+                    string body;
+                    body = "Ad Soyad: " + model.FirstName + " " + model.LastName + "<br />";
+                    body += "Telefon: " + model.Phone + "<br />";
+                    body += "E-posta: " + model.Email + "<br />";
+                    
+                   
+                    mailMessage.IsBodyHtml = true;
+                    mailMessage.Body = body;
+
+                    System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587);
+                    smtp.Credentials = new System.Net.NetworkCredential("gonderen@gmail.com", "gondereninmailsifresi");
+                    smtp.EnableSsl = true;
+                    smtp.Send(mailMessage);
+                    ViewBag.Message = "Mesajınız gönderildi. Teşekkür ederiz.";
+                    ViewBag.Message = "Form başarıyla iletildi, en kısa zamanda dönüş yapacağız.";
+                    return View();
+
+
+
+                    // bu birinci yol
+                    //TODU: Mail Gönderme
+                    //throw new Exception("Mail Sunucusuna ulaşılamıyor! Lütfen daha sonra tekrar deneyin.");                 
+                }
+                catch (Exception ex)
+                {
+
+                    ModelState.AddModelError("Error", ex.Message);
+                    hasError = true;
+                }
+                if (hasError == false) {
+                ViewBag.Message = "Mail Başarıyla Gönderildi.";
+                }
                 return View();
             }
             return View();

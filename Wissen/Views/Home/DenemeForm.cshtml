@@ -6,10 +6,16 @@
 <h2>DenemeForm</h2>
 <div class="row">
     <div class="col-md-6">
+        @if(ViewBag.Message != null)
+        {
+            <div class="alert alert-success">@ViewBag.Message</div>
+        }
         @using (Html.BeginForm())
         {
             <div class="form-horizontal">
-                @Html.ValidationSummary(true)
+                <!--Html.ValidationSummary(true); normal gösterimi ( çitf tırnak arası mesaj geliyor -->
+                @Html.ValidationSummary(true, "", new { @class = "text-danger"})
+                @Html.ValidationMessage("Error", new {@class = "text-danger"})<!--hata mesajını ekranda gösteriyor-->
                 <div class="form-group">
                     @Html.LabelFor(modelItem => modelItem.FirstName, new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
