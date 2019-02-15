@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -491,6 +497,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wissen.Data\Wissen.Data.csproj">
+      <Project>{c3ecc068-9678-43c2-950e-51b4ac29f2ab}</Project>
+      <Name>Wissen.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wissen.Model\Wissen.Model.csproj">
+      <Project>{a2d82f7c-025b-4a3b-87f3-1899654c5aab}</Project>
+      <Name>Wissen.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wissen.Service\Wissen.Service.csproj">
+      <Project>{8ae1aebf-a193-4585-b2b8-f06fad209495}</Project>
+      <Name>Wissen.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
