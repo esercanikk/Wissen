@@ -1,0 +1,15 @@
+﻿
+@model IEnumerable<Wissen.Model.Category>
+@{
+    ViewBag.Title = "Test";
+}
+<h2>Kategoriler</h2>
+<ol>
+    @foreach(var item in Model)
+    {
+        <li>@item.Name</li>
+    }
+
+</ol>
+
+

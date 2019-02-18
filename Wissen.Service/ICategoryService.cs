@@ -13,6 +13,7 @@ namespace Wissen.Service
         void Insert(Category category);
         void Update(Category category);
         void Delete(int id);
+        void Delete(Category entity);
         Category Fİnd(int id);
         Category Find(Expression<Func<Category, bool>> where);
         IEnumerable<Category> GetAll();

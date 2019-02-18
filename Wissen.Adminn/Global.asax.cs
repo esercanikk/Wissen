@@ -7,6 +7,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Wissen.Data;
+using Wissen.Service;
 
 namespace Wissen.Adminn
 {
@@ -39,10 +41,21 @@ namespace Wissen.Adminn
                 // OPTIONAL: Enable property injection into action filters.
                 builder.RegisterFilterProvider();
 
-              
 
-                // Set the dependency resolver to be Autofac.
-                var container = builder.Build();
+            //db context 'i  mi scoped( yani request bazlı) olarak register et
+            builder.RegisterType<ApplicationDbContext>().InstancePerRequest();
+
+            // generic repository geçici instance olarak register et
+            builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerDependency();
+
+            //servisleri register et
+            builder.RegisterType(typeof(PostService)).As(typeof(IPostService)).InstancePerDependency();
+            builder.RegisterType(typeof(CategoryService)).As(typeof(ICategoryService)).InstancePerDependency();
+           
+            
+
+            // Set the dependency resolver to be Autofac.
+            var container = builder.Build();
                 DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             
         }

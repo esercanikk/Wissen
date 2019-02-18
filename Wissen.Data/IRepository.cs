@@ -18,6 +18,7 @@ namespace Wissen.Data
         //linq da kullanıcagın koşul..
         T Find(Expression<Func<T, bool>> where);
         T Find(int id);
+        void SaveChanges();
        
 
     }

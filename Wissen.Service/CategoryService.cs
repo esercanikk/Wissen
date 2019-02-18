@@ -11,48 +11,57 @@ namespace Wissen.Service
 {
     public class CategoryService : ICategoryService
     {
-        private readonly IRepository<Category> repository;
-        public CategoryService(IRepository<Category> repository)
+        private readonly IRepository<Category> categoryRepository;
+        public CategoryService(IRepository<Category> categoryRepository)
         {
-            this.repository = repository;
+            this.categoryRepository = categoryRepository;
         }
         public void Delete(int id)
         {
-            var categoryToDelete = repository.Find(id);
-            if (categoryToDelete != null)
+            var entity = categoryRepository.Find(id);
+            if (entity != null)
             {
-                repository.Delete(categoryToDelete);
+                categoryRepository.Delete(entity);
+                categoryRepository.SaveChanges();
             }
+        }
+
+        public void Delete(Category entity)
+        {
+            categoryRepository.Delete(entity);
+            categoryRepository.SaveChanges();
         }
 
         public Category Find(Expression<Func<Category, bool>> where)
         {
-            return repository.Find(where);
+            return categoryRepository.Find(where);
         }
 
         public Category Fİnd(int id)
         {
-            return repository.Find(id);
+            return categoryRepository.Find(id);
         }
 
         public IEnumerable<Category> GetAll()
         {
-            return repository.GetAll(r => true);
+            return categoryRepository.GetAll();
         }
 
         public IEnumerable<Category> GetAll(Expression<Func<Category, bool>> where)
         {
-            return repository.GetAll(where);
+            return categoryRepository.GetAll(where);
         }
 
         public void Insert(Category category)
         {
-            repository.Update(category);
+            categoryRepository.Insert(category);
+            categoryRepository.SaveChanges();
         }
 
         public void Update(Category category)
         {
-            repository.Update(category);
+            categoryRepository.Update(category);
+            categoryRepository.SaveChanges();
         }
     }
 }
