@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201902150838374_addWissenData.Designer.cs">
       <DependentUpon>201902150838374_addWissenData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902190722190_optionalCategoryId.cs" />
+    <Compile Include="Migrations\201902190722190_optionalCategoryId.Designer.cs">
+      <DependentUpon>201902190722190_optionalCategoryId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
@@ -73,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201902150838374_addWissenData.resx">
       <DependentUpon>201902150838374_addWissenData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902190722190_optionalCategoryId.resx">
+      <DependentUpon>201902190722190_optionalCategoryId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

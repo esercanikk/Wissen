@@ -37,7 +37,7 @@ namespace Wissen.Service
             return categoryRepository.Find(where);
         }
 
-        public Category Fİnd(int id)
+        public Category Find(int id)
         {
             return categoryRepository.Find(id);
         }

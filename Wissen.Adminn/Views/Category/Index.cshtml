@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Wissen.Model.Category>
+@{
+    ViewBag.Title = "Kategoriler";
+}
+<h2>Kategoriler</h2>
+<!--<ol>
+    @foreach(var item in Model)
+    {
+        <li>@item.Name (@item.Description) @item.CreatedAt.ToShortDateString()</li>
+    }
+
+</ol>-->
+<a href="@Url.Action("Create")" class="btn btn-primary">Yeni kategori</a>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>Ad</th>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><a href="@Url.Action("Edit", new { id = item.Id })">@item.Name</a></td>
+            <td>@item.Description</td>
+            <td>@item.CreatedAt.ToString("dd.MM.yyyy")</td>
+            <td> <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-primary btn-sm ">Düzenle</a> <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger btn-sm ">Sil</a></td>
+
+        </tr>
+    }
+
+</table>
+

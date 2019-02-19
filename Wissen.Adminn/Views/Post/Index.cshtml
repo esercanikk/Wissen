@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Wissen.Model.Post>
+@{
+    ViewBag.Title = "Test";
+}
+<h2>Kategoriler</h2>
+<a href="@Url.Action("Create")" class="btn btn-primary">Yeni Kayıt</a>
+<table class="table table-hover table-striped">
+    <tr>
+        <th>Ad</th>
+        <th>Kategori</th>
+        <th>Açıklama</th>
+        <th>Tarih</th>
+        <th></th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><a href="@Url.Action("Edit", new { id = item.Id })">@item.Title</a></td>
+            <td>@(item.Category?.Name)</td>
+            <td>@item.Description</td>
+            <td>@item.CreatedAt.ToString("dd.MM.yyyy")</td>
+            <td> <a href="@Url.Action("Edit", new { id = item.Id })" class="btn btn-primary btn-sm ">Düzenle</a> <a href="@Url.Action("Delete", new { id = item.Id })" class="btn btn-danger btn-sm ">Sil</a></td>
+
+        </tr>
+    }
+
+</table>
+

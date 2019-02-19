@@ -9,16 +9,8 @@ namespace Wissen.Adminn.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ICategoryService categoryService;
-        public HomeController(ICategoryService categoryService)
-        {
-            this.categoryService = categoryService;
-        }
-        public ActionResult Test()
-        {
-            var categories = categoryService.GetAll();
-            return View(categories);
-        }
+      
+        
         public ActionResult Index()
         {
             return View();
