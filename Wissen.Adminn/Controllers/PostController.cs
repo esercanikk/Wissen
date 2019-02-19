@@ -59,7 +59,7 @@ namespace Wissen.Adminn.Controllers
             {
                 var model = postService.Fİnd(post.Id);
                 model.Title = post.Title;
-                model.Description = post.Description;
+                model.Description = post.Description;                           
                 model.CategoryId = post.CategoryId;
                 postService.Update(model);
 
@@ -73,6 +73,11 @@ namespace Wissen.Adminn.Controllers
         {
             postService.Delete(id);
             return RedirectToAction("index");
+        }
+        public ActionResult Get(int id)
+        {
+            var post = postService.Fİnd(id);
+            return View(post);
         }
     }
 }

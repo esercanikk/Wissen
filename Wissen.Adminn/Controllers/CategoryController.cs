@@ -27,6 +27,7 @@ namespace Wissen.Adminn.Controllers
             return View(category);
         }
         [HttpPost]
+        
         public ActionResult Create(Category category)
         {
             if (ModelState.IsValid)
